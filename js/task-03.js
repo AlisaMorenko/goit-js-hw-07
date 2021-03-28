@@ -15,3 +15,18 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const makeImgMarkup = image => {
+    const { url, alt } = image;
+    return `
+    <img src= ${url}
+    alt = ${alt}>
+    </img>
+    `
+    ;
+};
+
+const liContainerEl = document.querySelector('#gallery');
+
+const imagesMarkUp = images.map(makeImgMarkup).join('')
+liContainerEl.insertAdjacentHTML('afterbegin', imagesMarkUp)
