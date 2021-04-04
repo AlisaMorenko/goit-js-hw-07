@@ -17,16 +17,16 @@ const images = [
 ];
 
 const makeImgMarkup = image => {
-    const { url, alt } = image;
-    return `
-    <img src= ${url}
+  const { url, alt } = image;
+  return `
+    <img class = 'img'
+    src= ${url}
     alt = ${alt}>
     </img>
-    `
-    ;
+    `;
 };
 
 const liContainerEl = document.querySelector('#gallery');
 
-const imagesMarkUp = images.map(makeImgMarkup).join('')
-liContainerEl.insertAdjacentHTML('afterbegin', imagesMarkUp)
+const imagesMarkUp = images.map(makeImgMarkup).join('');
+liContainerEl.insertAdjacentHTML('afterbegin', imagesMarkUp);
